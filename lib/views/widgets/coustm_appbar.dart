@@ -2,18 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:note/views/widgets/coustm_search_icon.dart';
 
 class CoustmAppbar extends StatelessWidget {
-  const CoustmAppbar({super.key});
-
+  const CoustmAppbar({super.key, required this.title, required this.icon});
+  final String title;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Text(
-          "Notes",
-          style: TextStyle(fontSize: 24),
+          title,
+          style: const TextStyle(fontSize: 24),
         ),
-        Spacer(),
-        CoustumSearchIcon()
+        const Spacer(),
+        CoustumSearchIcon(
+          icon: icon,
+        )
       ],
     );
   }

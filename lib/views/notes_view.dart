@@ -30,7 +30,10 @@ class NotesView extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 0),
-            child: CoustmAppbar(),
+            child: CoustmAppbar(
+              title: 'Notes',
+              icon: Icons.search,
+            ),
           ),
           Expanded(
             child: NotesListView(),

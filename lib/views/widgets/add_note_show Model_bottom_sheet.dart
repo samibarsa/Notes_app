@@ -21,7 +21,7 @@ class AddNoteShowbottomsheet extends StatelessWidget {
             ),
             SizedBox(height: 16),
             CoustmTextfiled(
-              hintText: 'Content ...',
+              hintText: ' Content ...',
               maxlines: 5,
             ),
             SizedBox(
