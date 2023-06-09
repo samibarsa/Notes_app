@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note/views/widgets/coustm_Notes_Listview.dart';
 import 'package:note/views/widgets/coustm_appbar.dart';
 import 'package:note/views/widgets/coustm_note_item.dart';
 
@@ -7,18 +8,22 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 45,
           ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 16),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 0),
             child: CoustmAppbar(),
           ),
-          Notesitem()
+          const Expanded(child: NotesListView()),
+          FloatingActionButton(
+            onPressed: () {},
+            child: const Icon(Icons.add),
+          )
         ]),
       ),
     );
