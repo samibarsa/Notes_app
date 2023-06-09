@@ -10,7 +10,7 @@ class CoustumBouttun extends StatelessWidget {
       height: 55,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          color: Kprimerycolor, borderRadius: BorderRadius.circular(16)),
+          color: kprimerycolor, borderRadius: BorderRadius.circular(16)),
       child: const Center(
         child: Text(
           "Add",

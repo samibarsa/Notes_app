@@ -10,13 +10,13 @@ class CoustmTextfiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: maxlines,
-      cursorColor: Kprimerycolor,
+      cursorColor: kprimerycolor,
       decoration: InputDecoration(
           hintText: '${hintText}',
-          hintStyle: TextStyle(color: Kprimerycolor),
+          hintStyle: TextStyle(color: kprimerycolor),
           border: buildborder(),
           enabledBorder: buildborder(),
-          focusedBorder: buildborder(Kprimerycolor)),
+          focusedBorder: buildborder(kprimerycolor)),
     );
   }
 
