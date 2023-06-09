@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:note/views/widgets/add_note_show%20Model_bottom_sheet.dart';
 import 'package:note/views/widgets/coustm_Notes_Listview.dart';
 import 'package:note/views/widgets/coustm_appbar.dart';
-import 'package:note/views/widgets/coustm_note_item.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -9,21 +9,32 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(children: [
-          const SizedBox(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            context: context,
+            builder: (context) {
+              return const AddNoteShowbottomsheet();
+            },
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+          SizedBox(
             height: 45,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(bottom: 0),
             child: CoustmAppbar(),
           ),
-          const Expanded(child: NotesListView()),
-          FloatingActionButton(
-            onPressed: () {},
-            child: const Icon(Icons.add),
-          )
+          Expanded(
+            child: NotesListView(),
+          ),
         ]),
       ),
     );
