@@ -3,12 +3,21 @@ import 'package:note/costant.dart';
 
 class CoustmTextfiled extends StatelessWidget {
   const CoustmTextfiled(
-      {super.key, required this.hintText, required this.maxlines});
+      {super.key, required this.hintText, this.maxlines = 1, this.onsaved});
   final String hintText;
   final int maxlines;
+  final void Function(String?)? onsaved;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onSaved: onsaved,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Filed is required';
+        } else {
+          return null;
+        }
+      },
       maxLines: maxlines,
       cursorColor: kprimerycolor,
       decoration: InputDecoration(
