@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:note/cubites/add_note_cubit/add_note_cubit.dart';
 import 'package:note/models/note_model.dart';
+import 'package:note/views/widgets/colorslistview.dart';
 import 'package:note/views/widgets/coustm_text_filed.dart';
 
 import 'coustom_Button.dart';
@@ -48,9 +49,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxlines: 5,
           ),
           const SizedBox(
-            height: 50,
+            height: 25,
           ),
           const ColorsitemListview(),
+          const SizedBox(
+            height: 25,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CoustumBouttun(
@@ -78,34 +82,6 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 25,
           )
         ],
-      ),
-    );
-  }
-}
-
-class Colorsitem extends StatelessWidget {
-  const Colorsitem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const CircleAvatar(
-      radius: 38,
-      backgroundColor: Colors.blue,
-    );
-  }
-}
-
-class ColorsitemListview extends StatelessWidget {
-  const ColorsitemListview({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 38 * 2,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) => const Colorsitem(),
       ),
     );
   }
