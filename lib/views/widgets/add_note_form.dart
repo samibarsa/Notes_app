@@ -50,6 +50,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 50,
           ),
+          const ColorsitemListview(),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CoustumBouttun(
@@ -77,6 +78,34 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 25,
           )
         ],
+      ),
+    );
+  }
+}
+
+class Colorsitem extends StatelessWidget {
+  const Colorsitem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CircleAvatar(
+      radius: 38,
+      backgroundColor: Colors.blue,
+    );
+  }
+}
+
+class ColorsitemListview extends StatelessWidget {
+  const ColorsitemListview({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 38 * 2,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) => const Colorsitem(),
       ),
     );
   }
