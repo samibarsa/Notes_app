@@ -8,12 +8,15 @@ import 'package:note/views/Edit_note_view.dart';
 class Notesitem extends StatelessWidget {
   const Notesitem({super.key, required this.notes});
   final NoteModel notes;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const EditNoteView(),
+          builder: (context) => EditNoteView(
+            note: notes,
+          ),
         ));
       },
       child: Container(
