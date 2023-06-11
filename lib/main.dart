@@ -12,7 +12,9 @@ void main() async {
   Bloc.observer = SimpleBlocOpserver();
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotebox);
-  runApp(const NotesApp());
+  runApp(
+    const NotesApp(),
+  );
 }
 
 class NotesApp extends StatelessWidget {
